@@ -1,6 +1,6 @@
-name: duckdns-kyrofa
+name: deSEC-idontgit
 version: '0.1'
-summary: Keep your DuckDNS records up-to-date
+summary: Keep your deSEC records up-to-date
 description: |
   This simple snap updates the configured DuckDNS domain names every five
   minutes. Configure it by providing your token:
