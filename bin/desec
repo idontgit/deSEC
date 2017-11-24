@@ -2,25 +2,25 @@
 
 while true; do
 	# First, get token
-	token=$(snapctl get token)
+	password=$(snapctl get token)
 
 	# Next, get list of domain names:
-	domains=$(snapctl get domains)
+	username=$(snapctl get domains)
 
 	# Verify that both are somewhat valid:
-	if [ -z "$token" ]; then
-		echo "Waiting for a token to be configured" >&2
-	elif [ -z "$domains" ]; then
-		echo "Waiting for domains to be configured" >&2
+	if [ -z "$password" ]; then
+		echo "Waiting for a password to be configured" >&2
+	elif [ -z "$username" ]; then
+		echo "Waiting for username to be configured" >&2
 	else
 		# Config looks good, update the record
-		output=$(echo url="https://www.duckdns.org/update?domains=$domains&token=$token&ip=" | curl -s -K -)
+		output=$(echo url="  https://update.dedyn.io/update?username=$username&password=$password" | curl -s -K -)
 
 		# Don't print anything in the case of success, but handle errors.
 		if [ "$output" = "KO" ]; then
 			echo "Failed to update DNS record: please check your token and domains" >&2
 		elif [ "$output" != "OK" ]; then
-			echo "Unexpected response from DuckDNS: $output" >&2
+			echo "Unexpected response from deSEC: $output" >&2
 		fi
 	fi
 
