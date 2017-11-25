@@ -1,16 +1,7 @@
-name: deSEC-idontgit
+name: desec-idontgit
 version: '0.1'
 summary: Keep your deSEC records up-to-date
-description: |
-This simple snap updates the configured deSEC domain names every five
-minutes. Configure it by providing your token:
-
-    $ snap set deSEC-idontgit password=<secret>
-
-And configure your domain name list (comma-separated, no spaces):
-
-    $ snap set deSEC-idontgit username=domain1.com,domain2.com
-
+description: This simple snap updates the configured deSEC domain names every five minutes.
 
 grade: draft
 confinement: strict
