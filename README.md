@@ -13,3 +13,9 @@ That's it. The daemon runs every five minutes. Check the journal for output,
 including any problems:
 
     $ sudo journalctl -u snap.desec-idontgit.desec.service
+
+==============================================================================
+
+Please note:
+Files ~/desec-idontgit/bin/desec and ~/desec-idontgit/snap/hook/configure have to be executable.
+E.g. run '$ sudo chmod 755 <file>' on both files.
